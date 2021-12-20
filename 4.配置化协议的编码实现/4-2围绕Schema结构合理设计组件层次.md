@@ -1,0 +1,1 @@
+编写schema的时候让AreaList这个组件关注children的拼装而AreaItem则关注于一个个对象的生成

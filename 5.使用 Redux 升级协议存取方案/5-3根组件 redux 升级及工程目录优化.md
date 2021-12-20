@@ -1,0 +1,10 @@
+1. handleResetBtnClick从localStorage里面取出schema,来替换当前schema的状态。
+2. 改用redux之后把localStorage里面的schema替换掉redux中统一存储的schema。
+3. 如何改变redux中的数据？
+4. 重置的时候拿localStorage里面的schema去替换掉redux里面统一存储的schema。在handleResetBtnClick中要改变redux中的数据。改变redux中的数据需要遵循一个流程：action -> reducer -> redux change。先引入dispatch方法，然后把action通过dispatch方法传给reducer。先构建一个action，action有两个属性：type和value。创建完action之后将action传递给reducer。reducer接到这个action之后要自己做数据处理。
+5. draft可以理解成当前store中所有的数据（homeManagement页面的所有数据)
+6. 点击保存的时候要把数据存到localStorage里面。以前是从子组件的ref中取。有了redux之后不需要从子组件中拿数据了，而是从公共的仓库中取数据。useSelector能直接取到所有的数据
+7. 删除areaListRef相关
+8. 以前放在state中初始化页面数据，现在数据都存在store中。store初始化数据是存在 reducer 的defaultSchema中
+9. initialSchema初始化schema首先从localStorage中取数据，如果取不到的话默认就是第二个参数那样。
+10. 优化代码：从store中取数据，向store存数据，写在业务中很分散，所以需要集成一下。

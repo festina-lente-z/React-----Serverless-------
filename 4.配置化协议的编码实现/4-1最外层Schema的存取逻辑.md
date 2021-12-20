@@ -1,0 +1,1 @@
+在组件加载的时候要取到schema的内容，在HomeManagement中`const schema = parseJsonByString(window.localStorage.schema, {})`
