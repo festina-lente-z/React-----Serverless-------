@@ -8,3 +8,7 @@
 8. 以前放在state中初始化页面数据，现在数据都存在store中。store初始化数据是存在 reducer 的defaultSchema中
 9. initialSchema初始化schema首先从localStorage中取数据，如果取不到的话默认就是第二个参数那样。
 10. 优化代码：从store中取数据，向store存数据，写在业务中很分散，所以需要集成一下。
+11. action中type: 'CHANGE_SCHEMA'，type值有时候容易拼错。解决方法：在store下创建一个名为constant的文件夹来存储常量。
+12. 一般来说，当我们构建一个action的时候，不推荐把action的构建放到业务逻辑中来。因为引用常量type需要跳好几层目录，但本身应该关注的组件间的相互引用。一般会把action的生成放到store目录下的action文件夹下
+13. 继续优化目录，在HomeManagement文件夹下创建一个store文件夹,将原先store中的文件移动到新创建的文件夹下。根目录的store只剩下index.js，负责拼装一个通用的数据仓库出来。
+14. 目录结构变更之后代码要重新编译。
